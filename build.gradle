@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.devh.auth'
+version = 'v1'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    implementation ('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    implementation 'org.springframework.security:spring-security-crypto'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    /* Json Web Token */
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    /* Json Web Token signWith noClassDefFoundError: javax/xml/bind/DatatypeConverter Java 11 Issue */
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
+    /* Log4j2 */
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+    implementation 'org.apache.logging.log4j:log4j-web:2.17.1'
+    implementation ('org.apache.logging.log4j:log4j-slf4j-impl:2.17.1')
+    /* Embedded Tomcat Log */
+    implementation ('org.slf4j:jul-to-slf4j:1.7.33') {
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+    implementation 'org.apache.commons:commons-lang3'
+    /* Json */
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
