@@ -40,7 +40,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             departmentList.forEach(e -> departmentVOList.add(entityToVO(e)));
 
             for(DepartmentVO v : departmentVOList) {
-                v.setText(v.getName());
+                v.setText();
                 if(v.isRoot()) {
                     result.add(v);
                     continue;

@@ -20,7 +20,14 @@ public class DepartmentVO extends TreeVO<DepartmentVO> {
     private String description;
     private Long parentId;
 
+
+    @Override
     public boolean isRoot() {
         return parentId == null;
+    }
+
+    @Override
+    public void setText() {
+        super.text = name;
     }
 }
