@@ -1,6 +1,6 @@
 package com.devh.auth.vo;
 
-import com.devh.common.api.vo.TreeVO;
+import com.devh.module.api.vo.TreeVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

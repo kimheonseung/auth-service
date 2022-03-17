@@ -1,8 +1,7 @@
 package com.devh.auth.service;
 
 import com.devh.auth.vo.AuthorityVO;
-import com.devh.common.exception.ServiceException;
-import org.junit.jupiter.api.Test;
+import com.devh.module.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

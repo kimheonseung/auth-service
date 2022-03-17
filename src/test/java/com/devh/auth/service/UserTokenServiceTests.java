@@ -2,7 +2,7 @@ package com.devh.auth.service;
 
 import com.devh.auth.vo.TokenVO;
 import com.devh.auth.vo.UserVO;
-import com.devh.common.exception.ServiceException;
+import com.devh.module.exception.ServiceException;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

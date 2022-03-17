@@ -2,8 +2,8 @@ package com.devh.auth.service;
 
 import com.devh.auth.entity.Department;
 import com.devh.auth.vo.DepartmentVO;
-import com.devh.common.api.vo.TreeVO;
-import com.devh.common.exception.ServiceException;
+import com.devh.module.api.vo.TreeVO;
+import com.devh.module.exception.ServiceException;
 
 import java.util.List;
 

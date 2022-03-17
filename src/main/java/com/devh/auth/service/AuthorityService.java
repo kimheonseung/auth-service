@@ -2,7 +2,7 @@ package com.devh.auth.service;
 
 import com.devh.auth.entity.Authority;
 import com.devh.auth.vo.AuthorityVO;
-import com.devh.common.exception.ServiceException;
+import com.devh.module.exception.ServiceException;
 
 import java.util.List;
 
