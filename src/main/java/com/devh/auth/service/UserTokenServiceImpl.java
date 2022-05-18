@@ -80,6 +80,7 @@ public class UserTokenServiceImpl implements UserTokenService {
                             tokenVO.setAccessToken(refreshTokenVO.getAccessToken());
                             tokenVO.setRefreshToken(refreshTokenVO.getRefreshToken());
                             userToken.setRefreshToken(refreshTokenVO.getRefreshToken());
+                            userTokenRepository.save(userToken);
                         } else {
                             tokenVO.setTokenStatus(TokenStatus.REFRESH_FAIL);
                         }

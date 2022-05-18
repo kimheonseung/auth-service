@@ -1,11 +1,11 @@
-INSERT INTO AUTHORITY
+INSERT IGNORE INTO AUTHORITY
     (ID, NAME, DESCRIPTION)
 VALUES (1, 'root', '루트'),
        (2, 'admin', '관리자'),
        (3, 'normal', '일반'),
        (4, 'guest', '게스트');
 
-INSERT INTO DEPARTMENT
+INSERT IGNORE INTO DEPARTMENT
     (ID, NAME, DESCRIPTION, DEPARTMENT_ID)
 VALUES (1, 'DevH.Co', '회사명', NULL),
        (2, '대표이사', '대표', 1),
@@ -27,7 +27,7 @@ VALUES (1, 'DevH.Co', '회사명', NULL),
        (18, 'JAVA설계', 'JAVA설계', 13),
        (19, 'QA', 'QA', 14);
 
-INSERT INTO USER
+INSERT IGNORE INTO USER
     (ID, USERNAME, PASSWORD, NAME, NICKNAME) /* EMAIL, PHONE, ACCESS_IP, LOGIN_FAIL_IP, LOGIN_FAIL_COUNT, STATUS_MESSAGE, BACKGROUND_IMAGE, PROFILE_IMAGE, LOGIN_AT, LOGIN_FAILED_AT, PASSWORD_CHANGED_AT, CREATED_AT, UPDATED_AT) */
 VALUES (1, 'root', '$2a$10$7/OVVzZfA9wI1q4viJVmkefkzF7W7bgzwXoBJUXl2C4IVCVMz4tNi', '김루트', '루트킴'), /* root / root */
        (2, 'admin', '$2a$10$jGszCh15WEW3jxzoLKdNMuFt7ZV53cYPfPnrZH1w7RmZJnGnz3lDC', '김관리', '관리킴'), /* admin / admin */
@@ -35,7 +35,7 @@ VALUES (1, 'root', '$2a$10$7/OVVzZfA9wI1q4viJVmkefkzF7W7bgzwXoBJUXl2C4IVCVMz4tNi
         '일반킴'), /* normal / normal */
        (4, 'guest', '$2a$10$EWTFu2lWmFvzmP50VtXpPuAdOEESre0ta6FFkxaV/ED9VVcRh/0sW', '김손님', '손님킴'); /* guest / guest */
 
-INSERT INTO USER_AUTHORITY
+INSERT IGNORE INTO USER_AUTHORITY
     (ID, USER_ID, AUTHORITY_ID)
 VALUES (1, 1, 1),
        (2, 1, 2),
@@ -48,6 +48,6 @@ VALUES (1, 1, 1),
        (9, 3, 4),
        (10, 4, 4);
 
-INSERT INTO USER_DEPARTMENT
+INSERT IGNORE INTO USER_DEPARTMENT
     (ID, USER_ID, DEPARTMENT_ID)
 VALUES (1, 1, 2);

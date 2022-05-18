@@ -22,7 +22,7 @@ spring:
     init:
       platform: mariadb
       schema-locations: classpath*:db/schema-${spring.sql.init.platform}.sql
-#      data-locations: classpath*:db/data-${spring.sql.init.platform}.sql
+      data-locations: classpath*:db/data-${spring.sql.init.platform}.sql
       mode: always
   jpa:
     hibernate:
