@@ -2,16 +2,15 @@ package com.devh.auth.controller;
 
 import com.devh.auth.service.DepartmentService;
 import com.devh.auth.vo.DepartmentVO;
-import com.devh.common.api.constant.ApiStatus;
-import com.devh.common.api.response.ApiResponse;
-import com.devh.common.api.vo.TreeVO;
+import com.devh.module.api.constant.ApiStatus;
+import com.devh.module.api.response.ApiResponse;
+import com.devh.module.api.vo.TreeVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

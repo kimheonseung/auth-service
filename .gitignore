@@ -3,6 +3,11 @@
 
 .DS_Store
 docker/mariadb
+.gradle
+.idea
+build
+gradle
+*.imi
 
 ### Eclipse ###
 .metadata

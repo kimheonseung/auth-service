@@ -8,7 +8,7 @@ import com.devh.auth.entity.UserDepartment;
 import com.devh.auth.vo.AuthorityVO;
 import com.devh.auth.vo.DepartmentVO;
 import com.devh.auth.vo.UserVO;
-import com.devh.common.exception.ServiceException;
+import com.devh.module.exception.ServiceException;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@ package com.devh.auth.controller;
 
 import com.devh.auth.service.UserService;
 import com.devh.auth.vo.UserVO;
-import com.devh.common.api.constant.ApiStatus;
-import com.devh.common.api.response.ApiResponse;
+import com.devh.module.api.constant.ApiStatus;
+import com.devh.module.api.response.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

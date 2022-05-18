@@ -1,8 +1,8 @@
 package com.devh.auth.filter;
 
 import com.devh.auth.util.JwtTokenUtils;
-import com.devh.common.api.constant.ApiStatus;
-import com.devh.common.api.response.ApiResponse;
+import com.devh.module.api.constant.ApiStatus;
+import com.devh.module.api.response.ApiResponse;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import lombok.RequiredArgsConstructor;

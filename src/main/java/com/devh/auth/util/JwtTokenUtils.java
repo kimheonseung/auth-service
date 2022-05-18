@@ -3,7 +3,7 @@ package com.devh.auth.util;
 import com.devh.auth.vo.TokenInformationVO;
 import com.devh.auth.vo.TokenVO;
 import com.devh.auth.vo.UserVO;
-import com.devh.common.util.ExceptionUtils;
+import com.devh.module.exception.util.ExceptionUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
