@@ -17,7 +17,7 @@ spring:
   datasource:
     url: jdbc:mariadb://127.0.0.1:3306/devh?rewriteBatchedStatements=true
     username: devh
-    password: 1234
+    password: J6zXTGI6Fxtnzkd7wb26Jm0Pddmp0+vAZ8835vfPVCGncZyLLEfpT83ZMEGGwB9a60I5Yw==
   sql:
     init:
       platform: mariadb

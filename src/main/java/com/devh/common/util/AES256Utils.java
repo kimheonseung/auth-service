@@ -95,6 +95,32 @@ public class AES256Utils {
         }
     }
 
+    public String decrypt(String key, String s) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+        if(StringUtils.isNotEmpty(s)) {
+            final Cipher cipher = getCipher();
+
+            final ByteBuffer buffer = ByteBuffer.wrap(Base64.decodeBase64(s));
+
+            final byte[] saltBytes = createSaltBytes();
+            buffer.get(saltBytes, 0, saltBytes.length);
+
+            final byte[] ivBytes = new byte[cipher.getBlockSize()];
+            buffer.get(ivBytes, 0, ivBytes.length);
+
+            final byte[] encryptedTextBytes = new byte[buffer.capacity() - saltBytes.length - ivBytes.length];
+            buffer.get(encryptedTextBytes);
+
+            final SecretKeySpec secret = getSecretKeySpec(key, saltBytes);
+
+            cipher.init(Cipher.DECRYPT_MODE, secret, new IvParameterSpec(ivBytes));
+
+            byte[] decryptedTextBytes = cipher.doFinal(encryptedTextBytes);
+            return new String(decryptedTextBytes);
+        } else {
+            return null;
+        }
+    }
+
     private byte[] createSaltBytes(){
         final SecureRandom random = new SecureRandom();
         byte[] saltBytes = new byte[20];
@@ -103,6 +129,16 @@ public class AES256Utils {
     }
 
     private SecretKeySpec getSecretKeySpec(byte[] saltBytes) throws InvalidKeySpecException, NoSuchAlgorithmException {
+        /* Password-Based Key Derivation function */
+        final SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+        /* 1000번 해시하여 256 bit 키 spec 생성*/
+        final PBEKeySpec spec = new PBEKeySpec(key.toCharArray(), saltBytes, 1000, 256);
+        /* 비밀키 생성 */
+        final SecretKey secretKey = factory.generateSecret(spec);
+        return new SecretKeySpec(secretKey.getEncoded(), "AES");
+    }
+
+    private SecretKeySpec getSecretKeySpec(String key, byte[] saltBytes) throws InvalidKeySpecException, NoSuchAlgorithmException {
         /* Password-Based Key Derivation function */
         final SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
         /* 1000번 해시하여 256 bit 키 spec 생성*/
