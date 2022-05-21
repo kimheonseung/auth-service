@@ -15,7 +15,7 @@ jwt:
 
 spring:
   datasource:
-    url: jdbc:mariadb://127.0.0.1:3306/devh?rewriteBatchedStatements=true
+    url: jdbc:mariadb://localhost:3306/devh?rewriteBatchedStatements=true
     username: 15x6GiFKyvU7nd9tT5yV0Q/gM50+1PfywBi9BJuSML3s+NJT+8yKBAdk6VFTV6o6U9Elqg==
     password: J6zXTGI6Fxtnzkd7wb26Jm0Pddmp0+vAZ8835vfPVCGncZyLLEfpT83ZMEGGwB9a60I5Yw==
   sql:
