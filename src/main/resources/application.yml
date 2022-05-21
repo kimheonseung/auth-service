@@ -8,15 +8,15 @@ aes:
 jwt:
   auth:
     issuer: devh
-    secretKey: devh
+    secretKey: vkd4NTCMkj83oNWkFuPrYbJi76zm+B6BZ8c6ngu8w1fwMkodU4L+pQMCyhrECbxemZhhEg==
     accessExpire: 3600
     refreshExpire: 604800
-    header: Authorization
+    header: cbIiwvIcNHPDDostVi59AqzmHDIpoD6dxWPR/y9fCP83yDtngDelLRVHZQdqH4Y5hZry5Q==
 
 spring:
   datasource:
     url: jdbc:mariadb://127.0.0.1:3306/devh?rewriteBatchedStatements=true
-    username: devh
+    username: 15x6GiFKyvU7nd9tT5yV0Q/gM50+1PfywBi9BJuSML3s+NJT+8yKBAdk6VFTV6o6U9Elqg==
     password: J6zXTGI6Fxtnzkd7wb26Jm0Pddmp0+vAZ8835vfPVCGncZyLLEfpT83ZMEGGwB9a60I5Yw==
   sql:
     init:
