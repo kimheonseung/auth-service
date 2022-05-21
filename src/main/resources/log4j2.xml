@@ -9,6 +9,18 @@
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout pattern="${layoutPattern}" />
         </Console>
+        <RollingFile name="file" fileName="logs/auth-service.log"
+                     filePattern="logs/auth-service.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="${layoutPattern}" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="logs" maxDepth="1">
+                    <IfAccumulatedFileCount exceeds="8"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
     </Appenders>
     <Loggers>
         <Root level="info" additivity="false">
